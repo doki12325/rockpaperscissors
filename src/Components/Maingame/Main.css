@@ -1,0 +1,10 @@
+.main-container {
+  height: 70vh;
+  width: 65vw;
+  /* background-color: red; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}

@@ -1,0 +1,25 @@
+.tile-container {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0rem -0.4rem hsla(240, 2%, 9%, 0.3);
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.tile-inner-container {
+  background-color: white;
+  border-radius: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 7.5rem;
+  width: 7.5rem;
+
+  box-shadow: inset 0rem 0.4rem hsla(240, 2%, 9%, 0.2);
+}
