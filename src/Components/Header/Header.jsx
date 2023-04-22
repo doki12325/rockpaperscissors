@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import "./Header.css";
+import { Gamestore } from "../../Store/GameStore";
 
 export default function Header() {
+  const score = useContext(Gamestore);
   return (
     <div className="header-container">
       <div className="header-text-container">
@@ -14,7 +16,7 @@ export default function Header() {
       </div>
       <div className="score-container">
         <p className="score-text score-head">SCORE</p>
-        <h1 className="score-text score-main">12</h1>
+        <h1 className="score-text score-main">{score.score.score}</h1>
       </div>
     </div>
   );

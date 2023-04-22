@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import "./Main.css";
 import Tile from "../TIle/Tile";
+import { Gamestore } from "../../Store/GameStore";
 
 export default function Main() {
   const tiledata = [
@@ -38,12 +39,39 @@ export default function Main() {
     setOrpos({ x: mainel.clientWidth / 2, y: mainel.clientHeight / 2 });
   }, []);
 
+  const gamestore = useContext(Gamestore);
+
   return (
-    <div id="main" className="main-container">
-      {/* <div className="tile-holder"></div> */}
-      {tiledata.map((data, i) => (
-        <Tile key={data.id} orpos={orpos} index={i} {...data} />
-      ))}
+    <div className="main-container">
+      <h1
+        className="pick-text"
+        style={{
+          visibility:
+            gamestore.userselect.userselect === null ? "hidden" : "visible",
+          opacity: gamestore.userselect.userselect === null ? "0" : "1",
+          top: 0,
+          left: "20%",
+        }}
+      >
+        YOU PICKED
+      </h1>
+      <h1
+        className="pick-text"
+        style={{
+          visibility:
+            gamestore.userselect.userselect === null ? "hidden" : "visible",
+          opacity: gamestore.userselect.userselect === null ? "0" : "1",
+          top: 0,
+          right: "20%",
+        }}
+      >
+        THE HOUSE PICKED
+      </h1>
+      <div id="main" className="tile-holder">
+        {tiledata.map((data, i) => (
+          <Tile key={data.id} orpos={orpos} index={i} {...data} />
+        ))}
+      </div>
     </div>
   );
 }
