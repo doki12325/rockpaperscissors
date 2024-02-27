@@ -1,6 +1,6 @@
 .tile-container {
-  height: 10rem;
-  width: 10rem;
+  height: clamp(7rem, 8.5vw, 10rem);
+  width: clamp(7rem, 8.5vw, 10rem);
   border-radius: 100%;
   display: flex;
   align-items: center;
@@ -31,4 +31,8 @@
   width: 75%;
 
   box-shadow: inset 0rem 0.4rem hsla(240, 2%, 9%, 0.2);
+}
+
+.tile-image {
+  height: 50%;
 }

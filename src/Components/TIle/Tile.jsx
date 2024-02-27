@@ -12,7 +12,7 @@ export default function Tile(props) {
         [
           {
             top: "25%",
-            left: "20%",
+            left: "30%",
             transform: "translate(-50%,-50%) scale(2.0)",
           },
         ],
@@ -27,6 +27,7 @@ export default function Tile(props) {
     <div
       onClick={() => {
         setUserselect(props.id);
+        gamestore.gamestate.setGamestate("housepick");
       }}
       id={props.id}
       className="tile-container tilepos"
@@ -35,15 +36,15 @@ export default function Tile(props) {
         top: `${
           props.orpos.y +
           2 *
-            200 *
+            180 *
             Math.sin((Math.PI / 5) * props.index) *
             Math.sin((Math.PI / 5) * props.index) -
-          200
+          180
         }px`,
         left: `${
           props.orpos.x +
           2 *
-            200 *
+            180 *
             Math.sin((Math.PI / 5) * props.index) *
             Math.cos((Math.PI / 5) * props.index)
         }px`,
